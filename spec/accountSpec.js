@@ -41,4 +41,9 @@ describe('Account', () => {
     })
   })
 
+  describe('TodayDate', () => {
+    it('returns the date in the format dd/mm/yyyy', () => {
+      expect(account.todayDate()).toMatch(/\d\d\/\d\d\/\d\d\d\d/)
+    })
+  }) 
 })
