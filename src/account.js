@@ -10,15 +10,27 @@ class Account {
     let debit = ''
 
     if (type === 'credit') {
-      this.balance += amount;
-      credit = amount.toFixed(2);
-    } 
-    
-    if (type === 'debit') {
-      this.balance -= amount;
-      debit = amount.toFixed(2);
+      credit = this.creditTrans(amount)
+    } else if (type === 'debit') {
+      debit = this.debitTrans(amount)
+    } else {
+      console.log('incorrect transaction type')
     }
 
+    this.storeTransaction(credit, debit)
+  }
+
+  creditTrans = (amount) => {
+    this.balance += amount;
+    return amount.toFixed(2);
+  }
+
+  debitTrans = (amount) => {
+    this.balance -= amount;
+    return amount.toFixed(2);
+  }
+
+  storeTransaction = (credit, debit) => {
     this.accountHistory.push({"date": this.todayDate(),
                               "credit": credit, 
                               "debit": debit,
