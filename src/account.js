@@ -18,12 +18,12 @@ class Account {
       debit = true;
     }
 
-    this.accountHistory.push({"credit": credit, 
+    this.accountHistory.push({"date": this.todayDate(),
+                              "credit": credit, 
                               "debit": debit,
                               "amount": amount, 
                               "balance": this.balance});
   }
-
 
   todayDate = () => {
     let today = new Date().toJSON().slice(0,10).replace(/-/g,'/');

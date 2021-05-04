@@ -34,10 +34,11 @@ describe('Account', () => {
 
     it('records the details of the transaction in the accountHistory', () => {
       account.transaction(500, 'credit')
-      expect(account.accountHistory[0]).toEqual({"credit": true, 
-                                              "debit": false,
-                                              "amount": 500, 
-                                              "balance": 500})
+      expect(account.accountHistory[0]).toEqual({"date": jasmine.anything(),
+                                                 "credit": true, 
+                                                 "debit": false,
+                                                 "amount": 500, 
+                                                 "balance": 500})
     })
   })
 
