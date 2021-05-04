@@ -6,10 +6,21 @@ class Account {
   }
 
   transaction = (amount, type) => {
+    let credit = false
+    let debit = false
     if (type === 'credit') {
       this.balance += amount;
-    } else if (type === 'debit') {
+      credit = true
+    } 
+    
+    if (type === 'debit') {
       this.balance -= amount;
+      debit = true
     }
+
+    this.accountHistory.push({"credit": credit, 
+                              "debit": debit,
+                              "amount": amount, 
+                              "balance": this.balance})
   }
 }
