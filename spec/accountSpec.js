@@ -22,23 +22,22 @@ describe('Account', () => {
 
   describe('Transaction', () => {
     it('increases the balance of the account if credit', () => {
-      account.transaction(500, 'credit');
-      expect(account.balance).toBe(500);
+      account.transaction(500.00, 'credit');
+      expect(account.balance).toBe(500.00);
     })
 
     it('decreases the balance of the account if debit', () => {
-      account.transaction(500, 'credit');
-      account.transaction(500, 'debit');
+      account.transaction(500.00, 'credit');
+      account.transaction(500.00, 'debit');
       expect(account.balance).toBe(0)
     })
 
     it('records the details of the transaction in the accountHistory', () => {
-      account.transaction(500, 'credit')
+      account.transaction(500.00, 'credit')
       expect(account.accountHistory[0]).toEqual({"date": jasmine.anything(),
-                                                 "credit": true, 
-                                                 "debit": false,
-                                                 "amount": 500, 
-                                                 "balance": 500})
+                                                 "credit": 500.00, 
+                                                 "debit": undefined,
+                                                 "balance": 500.00})
     })
   })
 
@@ -47,4 +46,13 @@ describe('Account', () => {
       expect(account.todayDate()).toMatch(/\d\d\/\d\d\/\d\d\d\d/)
     })
   }) 
+
+  describe('PrintStatement', () => {
+    it('returns a console log of the objects in accountHistory', () => {
+      spyOn(console, 'log');
+      account.transaction(500.00, 'credit')
+      account.printStatement()
+      expect(console.log).toHaveBeenCalledTimes(2)
+    })
+  })
 })
