@@ -10,6 +10,12 @@ describe('Account', () => {
     it('has a name associated with the account', () => {
       expect(account.name).toBe('Deborah');
     })
+
+    it('has an array called accountHistory', () =>{
+      expect(account.accountHistory).toBeInstanceOf(Array);
+    })
   })
+
+  
 
 })
