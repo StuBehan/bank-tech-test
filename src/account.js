@@ -10,9 +10,9 @@ class Account {
     let debit = ''
 
     if (type === 'credit') {
-      credit = this.creditTrans(amount)
+      credit = this.creditTransaction(amount)
     } else if (type === 'debit') {
-      debit = this.debitTrans(amount)
+      debit = this.debitTransaction(amount)
     } else {
       console.log('incorrect transaction type')
     }
@@ -20,12 +20,12 @@ class Account {
     this.storeTransaction(credit, debit)
   }
 
-  creditTrans = (amount) => {
+  creditTransaction = (amount) => {
     this.balance += amount;
     return amount.toFixed(2);
   }
 
-  debitTrans = (amount) => {
+  debitTransaction = (amount) => {
     this.balance -= amount;
     return amount.toFixed(2);
   }
