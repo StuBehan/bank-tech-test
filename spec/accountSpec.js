@@ -25,6 +25,12 @@ describe('Account', () => {
       account.transaction(500, 'credit');
       expect(account.balance).toBe(500);
     })
+
+    it('decreases the balance of the account if debit', () => {
+      account.transaction(500, 'credit');
+      account.transaction(500, 'debit');
+      expect(account.balance).toBe(0)
+    })
   })
 
 })

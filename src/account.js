@@ -7,7 +7,9 @@ class Account {
 
   transaction = (amount, type) => {
     if (type === 'credit') {
-      this.balance += amount
+      this.balance += amount;
+    } else if (type === 'debit') {
+      this.balance -= amount;
     }
   }
 }
