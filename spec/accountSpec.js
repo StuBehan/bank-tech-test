@@ -3,12 +3,12 @@ describe('Account', () => {
   let account;
 
   beforeEach(() => {
-    account = new Account('Deborah');
+    account = new Account('Deborah Slack');
   })
 
   describe('upon creation', () => {
     it('has a name associated with the account', () => {
-      expect(account.name).toBe('Deborah');
+      expect(account.name).toBe('Deborah Slack');
     })
 
     it('has an array called accountHistory', () =>{
@@ -35,7 +35,7 @@ describe('Account', () => {
     it('console logs an message if the transaction type was incorrect', () => {
       spyOn(console, 'log');
       account.transaction(500.00, 'wrong');
-      expect(console.log).toHaveBeenCalled;
+      expect(console.log).toHaveBeenCalledTimes(1);
     })
 
     it('records the details of the transaction in the accountHistory', () => {
