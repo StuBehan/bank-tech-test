@@ -14,7 +14,7 @@ class Account {
     } else if (type === 'debit') {
       debit = this.debitTransaction(amount)
     } else {
-      console.log('incorrect transaction type')
+      console.log('Incorrect transaction type')
     }
 
     this.storeTransaction(credit, debit)

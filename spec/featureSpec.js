@@ -1,9 +1,11 @@
 describe('Feature', () => {
 
   let account;
+  let date;
 
   beforeEach(() => {
     account = new Account('Deborah Slack');
+    date = account.todayDate();
   })
 
   it('allows the user to create an account with transactions and print the history', () => {
@@ -15,9 +17,9 @@ describe('Feature', () => {
     expect(account.balance).toEqual(1250.00);
     account.printStatement();
     expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance')
-    expect(console.log).toMatch(/|| 500.00 || {2}|| 500.00/)
-    expect(console.log).toMatch(/|| 500.00 || {2}|| 1000.00/) 
-    expect(console.log).toMatch(/|| 500.00 || {2}|| 1500.00/) 
-    expect(console.log).toMatch(/|| {2}|| 250.00 || 1250.00/) 
+    expect(console.log).toHaveBeenCalledWith(`${date} || 500.00 ||  || 500.00`)
+    expect(console.log).toHaveBeenCalledWith(`${date} || 500.00 ||  || 1000.00`) 
+    expect(console.log).toHaveBeenCalledWith(`${date} || 500.00 ||  || 1500.00`) 
+    expect(console.log).toHaveBeenCalledWith(`${date} ||  || 250.00 || 1250.00`)
   })
 })

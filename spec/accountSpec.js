@@ -36,6 +36,7 @@ describe('Account', () => {
       spyOn(console, 'log');
       account.transaction(500.00, 'wrong');
       expect(console.log).toHaveBeenCalledTimes(1);
+      expect(console.log).toHaveBeenCalledWith('Incorrect transaction type');
     })
 
     it('records the details of the transaction in the accountHistory', () => {
