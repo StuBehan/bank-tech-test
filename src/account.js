@@ -6,23 +6,23 @@ class Account {
   }
 
   transaction = (amount, type) => {
-    let credit
-    let debit
+    let credit = ''
+    let debit = ''
 
     if (type === 'credit') {
       this.balance += amount;
-      credit = amount;
+      credit = amount.toFixed(2);
     } 
     
     if (type === 'debit') {
       this.balance -= amount;
-      debit = amount;
+      debit = amount.toFixed(2);
     }
 
     this.accountHistory.push({"date": this.todayDate(),
                               "credit": credit, 
                               "debit": debit,
-                              "balance": this.balance});
+                              "balance": this.balance.toFixed(2)});
   }
 
   todayDate = () => {
