@@ -28,7 +28,7 @@ date || credit || debit || balance
 - I envisioned the Account would start with an account name, but this is superfluous really, an empty account history Array and a empty balance.
 - Simple if statements determine the kind of transaction and these are then returned as strings to 2 decimal places.
 - The date is added using the `Date()` function, this is trimmed to exclude the time aspect that is returned by `Date()` and then hyphens are replaced with forward slashes, the format is there reversed to `dd/mm/yyyy`.
-- The print statement function needs to return a `console.log()` for each of the transactions in the history, so it will loop through them all and using object destructuring to easily access the data for our template literal output.
+- The print statement function needs to return a `console.log()` for each of the transactions in the history, so it will loop through them all and using object destructuring to easily access the data for the template literal output.
 
 ## How to run
 
