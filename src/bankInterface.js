@@ -9,4 +9,9 @@ class BankInterface {
     let account = new Account(name);
     this.accounts.push(account)
   }
+
+  accessAccount = (name) => {
+    const account = this.accounts.find(account => account.name === name);
+    return account
+  }
 }

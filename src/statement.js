@@ -13,6 +13,6 @@ class Statement {
   }
 
   _checkValue = (value) => {
-    return value > 0 ? value.toFixed(2) : value
+    return value > 0 ? value.toFixed(2) : ''
   }
 }
