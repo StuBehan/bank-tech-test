@@ -65,4 +65,4 @@ date || credit || debit || balance
 - babel as a parser for eslint
 - jasmine for a testing library
 - karma as a framework for testing with chrome remotely for CI integration
-- instanbul for coverage, ran inside the karma framework
+- istanbul for coverage, ran inside the karma framework
