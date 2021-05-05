@@ -3,33 +3,33 @@
 class Account {
   constructor(name) {
     this.name = name
-    this.accountHistory = [];
+    this._accountHistory = [];
   }
 
   credit = (amount) => {
-    let transaction = new Transaction(this._getStartingBalance(), amount, 'credit');
-    this.accountHistory.push(transaction);
+    let transaction = new Transaction(this._startingBalance(), amount, 'credit');
+    this._accountHistory.push(transaction);
   }
 
   debit = (amount) => {
-    let transaction = new Transaction(this._getStartingBalance(), amount, 'debit');
-    this.accountHistory.push(transaction);
+    let transaction = new Transaction(this._startingBalance(), amount, 'debit');
+    this._accountHistory.push(transaction);
   }
 
-  _getStartingBalance = () => {
-    if (this.accountHistory.length === 0) {
+  _startingBalance = () => {
+    if (this._accountHistory.length === 0) {
       return 0
     } else {
-      return this.accountHistory[this.accountHistory.length - 1].balance
+      return this._accountHistory[this._accountHistory.length - 1].balance
     }
   }
 
   getBalance = () => {
-    return this._getStartingBalance()
+    return this._startingBalance()
   }
 
   getStatement = () => {
-    let statement = new Statement(this.accountHistory);
+    let statement = new Statement(this._accountHistory);
     statement.printStatement();
   }
 }
