@@ -38,18 +38,19 @@ date || credit || debit || balance
 
 - I extracted the `Transaction` and `Statement` classes from the single class, `Account` that was managing everything. `Account` would then call upon these classes for functionality.
 - `Account` itself would be accessed from the `BankInterface` class which is what the user will interact with. 
-- I made sure to store tranasctions as numerical values instead of text so that they could be referenced later.
+- I made sure to store transactions as numerical values instead of text so that they could be referenced later.
 - I made it so that the `account.balance` was only stored in one place, the `_accountHistory` array.
-- Through the refactoring I removed the posibility of erronous transaction types by hard coding the types in to the `credit` and `debit` functions of the `Account` class.
+- Through the refactoring I removed the possibility of erroneous transaction types by hard coding the types into the `credit` and `debit` functions of the `Account` class.
 - I updated the feature test to demonstrate the Acceptance Criteria.
 
 # Original Approach to Task
 
-- I originally started trying to create a Bank class which created seperate objects of another class, Account, but found the bank class would just be calling account all the time so removed it. 
-- I envisioned the Account would start with an account name, but this is superfluous really, an empty account history Array and a empty balance.
+- I originally started trying to create a Bank class which created separate objects of another class, Account, but found the bank class would just be calling account all the time so removed it. 
+- I envisioned the Account would start with an account name, but this is superfluous really, an empty account history Array and an empty balance.
 - Simple if statements determine the kind of transaction and these are then returned as strings to 2 decimal places.
-- The date is added using the `Date()` function, this is trimmed to exclude the time aspect that is returned by `Date()` and then hyphens are replaced with forward slashes, the format is there reversed to `dd/mm/yyyy`.
-- The print statement function needs to return a `console.log()` for each of the transactions in the history, so it will loop through them all and using object destructuring to easily access the data for the template literal output.
+- The date is added using the `Date()` function, this is trimmed to exclude the time aspect that is returned by `Date()` and then hyphens are replaced with forward slashes, the format is reversed to `dd/mm/yyyy`.
+- The print statement function needs to return a `console.log()` for each of the transactions in the history, so it will loop through them all and use object destructuring to easily access the data for the template literal output.
+
 ---
 ## Test Coverage 
 
