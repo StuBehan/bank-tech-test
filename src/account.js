@@ -27,4 +27,9 @@ class Account {
   getBalance = () => {
     return this._getStartingBalance()
   }
+
+  getStatement = () => {
+    let statement = new Statement(this.accountHistory);
+    statement.printStatement();
+  }
 }

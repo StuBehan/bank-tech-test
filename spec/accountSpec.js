@@ -37,4 +37,14 @@ describe('Account', () => {
       expect(account.getBalance()).toEqual(500)
     })
   })
+
+  describe('GetStatement', () => {
+    it('shows a statement in the console', () => {
+      spyOn(console, 'log');
+      account.credit(500);
+      account.debit(250);
+      account.getStatement();
+      expect(console.log).toHaveBeenCalledTimes(3);
+    })
+  })
 })
