@@ -15,11 +15,8 @@ describe('Statement', () => {
     it('prints the statement to console', () => {
       spyOn(console, 'log')
       statement.printStatement();
-      expect(console.log).toHaveBeenCalledTimes(4)
-      expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance')
-      expect(console.log).toHaveBeenCalledWith('05/04/2021 || 500.00 ||  || 750.00')
-      expect(console.log).toHaveBeenCalledWith('03/04/2021 ||  || 250.00 || 250.00')
-      expect(console.log).toHaveBeenCalledWith('02/04/2021 || 500.00 ||  || 500.00')
+      expect(console.log).toHaveBeenCalledTimes(1)
+      expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance\n05/04/2021 || 500.00 ||  || 750.00\n03/04/2021 ||  || 250.00 || 250.00\n02/04/2021 || 500.00 ||  || 500.00')
     })
   })
 })

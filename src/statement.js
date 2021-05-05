@@ -5,11 +5,12 @@ class Statement {
   }
 
   printStatement = () => {
-    console.log('date || credit || debit || balance')
+    let printableStatement = ['date || credit || debit || balance']
     this.statement.reverse().map(transaction => {
       const { date, credit, debit, balance } = transaction;
-      console.log(`${date} || ${this._checkValue(credit)} || ${this._checkValue(debit)} || ${balance.toFixed(2)}`);
+      printableStatement.push(`${date} || ${this._checkValue(credit)} || ${this._checkValue(debit)} || ${balance.toFixed(2)}`);
     })
+    console.log(printableStatement.join('\n'))
   }
 
   _checkValue = (value) => {

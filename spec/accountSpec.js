@@ -44,7 +44,7 @@ describe('Account', () => {
       account.credit(500);
       account.debit(250);
       account.getStatement();
-      expect(console.log).toHaveBeenCalledTimes(3);
+      expect(console.log).toHaveBeenCalledTimes(1);
     })
   })
 })

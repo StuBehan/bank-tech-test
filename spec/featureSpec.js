@@ -22,10 +22,7 @@ describe('Feature', () => {
     bankInterface.accessAccount('Deborah Slack').debit(500.00);
     expect(bankInterface.accessAccount('Deborah Slack').getBalance()).toEqual(2500.00);
     bankInterface.accessAccount('Deborah Slack').getStatement();
-    expect(console.log).toHaveBeenCalledTimes(4)
-    expect(console.log).toHaveBeenCalledWith('date || credit || debit || balance')
-    expect(console.log).toHaveBeenCalledWith(`14/01/2012 ||  || 500.00 || 2500.00`)
-    expect(console.log).toHaveBeenCalledWith(`13/01/2012 || 2000.00 ||  || 3000.00`) 
-    expect(console.log).toHaveBeenCalledWith(`10/01/2012 || 1000.00 ||  || 1000.00`) 
+    expect(console.log).toHaveBeenCalledTimes(1)
+    expect(console.log).toHaveBeenCalledWith("date || credit || debit || balance\n14/01/2012 ||  || 500.00 || 2500.00\n13/01/2012 || 2000.00 ||  || 3000.00\n10/01/2012 || 1000.00 ||  || 1000.00") 
   })
 })
