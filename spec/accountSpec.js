@@ -27,14 +27,14 @@ describe('Account', () => {
   describe('Debit', () => {
     it('takes an amount and deducts it from the account balance', () => {
       account.debit(500);
-      expect(account._accountHistory[0].balance).toEqual(-500)
+      expect(account._accountHistory[0].balance).toEqual(-500);
     })
   })
   
   describe('GetBalance', () => {
     it('returns the balance of the account', () => {
-      account.credit(500)
-      expect(account.getBalance()).toEqual(500)
+      account.credit(500);
+      expect(account.getBalance()).toEqual(500);
     })
   })
 
