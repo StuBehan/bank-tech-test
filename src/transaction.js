@@ -1,8 +1,9 @@
+// eslint-disable-next-line no-unused-vars
 class Transaction {
   constructor(startingBalance, amount, type) {
-    this.date = this._setDate();
-    this.credit = '';
-    this.debit = '';
+    this.date = this.setDate();
+    this.credit = 0;
+    this.debit = 0;
     this.balance = 0;
     this.transaction(startingBalance, amount, type);
   }
@@ -26,7 +27,7 @@ class Transaction {
     return amount;
   }
 
-  _setDate = () => {
+  setDate = () => {
     let today = new Date().toJSON().slice(0,10).replace(/-/g,'/');
     today = today.split('/').reverse().join('/');
     return today;

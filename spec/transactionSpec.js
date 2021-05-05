@@ -2,6 +2,7 @@ describe('Transaction', () => {
   let transaction
 
   beforeEach(() => {
+    // eslint-disable-next-line no-undef
     transaction = new Transaction;
   })
 

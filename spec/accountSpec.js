@@ -3,6 +3,7 @@ describe('Account', () => {
   let account;
 
   beforeEach(() => {
+    // eslint-disable-next-line no-undef
     account = new Account('Deborah Slack');
   })
 
@@ -29,13 +30,11 @@ describe('Account', () => {
       expect(account.accountHistory[0].balance).toEqual(-500)
     })
   })
-
-  describe('PrintStatement', () => {
-    it('returns a console log of the objects in accountHistory', () => {
-      spyOn(console, 'log');
-      account.transaction(0, 500.00, 'credit');
-      account.printStatement();
-      expect(console.log).toHaveBeenCalledTimes(2);
+  
+  describe('GetBalance', () => {
+    it('returns the balance of the account', () => {
+      account.credit(500)
+      expect(account.getBalance()).toEqual(500)
     })
   })
 })

@@ -2,6 +2,7 @@ describe('BankInterface', () => {
   let bankInterface;
 
   beforeEach(() => {
+    // eslint-disable-next-line no-undef
     bankInterface = new BankInterface;
   })
 
