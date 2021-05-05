@@ -16,6 +16,20 @@ describe('Account', () => {
     })
   })
 
+  describe('Credit', () => {
+    it('takes an amount and adds it to the account balance', () => {
+      account.credit(500);
+      expect(account.accountHistory[0].balance).toEqual(500);
+    })
+  })
+
+  describe('Debit', () => {
+    it('takes an amount and deducts it from the account balance', () => {
+      account.debit(500);
+      expect(account.accountHistory[0].balance).toEqual(-500)
+    })
+  })
+
   describe('PrintStatement', () => {
     it('returns a console log of the objects in accountHistory', () => {
       spyOn(console, 'log');
